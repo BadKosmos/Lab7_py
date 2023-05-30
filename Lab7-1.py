@@ -18,6 +18,9 @@ def proc1():
 
 def proc2():
 
+    filename = "be_legendary.jpg"
+    with Image.open(filename) as img:
+        img.load()
     new_img = img.resize((img.width // 3, img.height // 3))
     new_img.save("resized_be_legendary.jpg")
     new_img = img.transpose(Image.FLIP_LEFT_RIGHT)
@@ -39,6 +42,7 @@ def proc3():
 
 def proc4():
 
+    filenames = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
     with Image.open("watermark.png") as img_water:
         img_water.load()
     img_water = img_water.convert('RGBA')
